@@ -43,9 +43,20 @@ module Methods
 	def sum_double(a, b)
 		if (a != b)
 			a+b
-		elsif (a = b)
+		else
 			2 * (a + b)
 		end
 	end
+
+
+	def diff21(x)
+		if (x < 21)
+			(21-x)
+		else
+			2*(21-x).abs
+		end
+	end
+
+
 
 end

@@ -4,7 +4,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative 'methods'
 
-class MethodsTest < MiniTest::Unit::TestCase
+class MethodsTest < MiniTest::Test
 	def setup
 		@m = Class.new do
      include Methods
@@ -37,5 +37,21 @@ class MethodsTest < MiniTest::Unit::TestCase
   	assert_equal 12, @m.sum_double(3, 3)
   	assert_equal -16, @m.sum_double(-4, -4)
   end
+
+def test_diff21
+  assert_equal 11, @m.diff21(10)
+  assert_equal 21, @m.diff21(0)
+  assert_equal 0, @m.diff21(21)
+  assert_equal 2, @m.diff21(22)
+  assert_equal 44, @m.diff21(43)
+end
+
+def test_parrot_trouble
+  assert_equal true, @m.parrot_trouble(0)
+  assert_equal true, @m.parrot_trouble(6)
+  assert_equal true, @m.parrot_trouble(8)
+  assert_equal true, @m.parrot_trouble(23)
+
+
 
 end
